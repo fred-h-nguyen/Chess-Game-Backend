@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
-// const routes = require('./routes');
+const routes = require('./routes');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // ADD API AND VIEW ROUTES
-// app.use(routes);
+app.use(routes);
 
 // SENDING EVERY OTHER REQUEST TO THE REACT APP AND DEFINE ANY API ROUTES BEFORE THIS RUNS
 app.get("*", (req, res) => {
