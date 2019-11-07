@@ -6,10 +6,33 @@ var Schema = mongoose.Schema;
 
 // CREATING THE USER SCHEMA WITH OUR SCHEMA CLASS
 var userSchema = new Schema({
-    user: {
+    username: {
         type: String,
         required: true,
         unique: true
+    }, 
+
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    },
+
+    rating: {
+        type: Number,
+        default: 500
+    },
+
+    password: {
+        type: String,
+        required: true,
+        unique: true
+    },
+
+    image: String,
+
+    savedGames: {
+        type: Array
     }
 });
 
